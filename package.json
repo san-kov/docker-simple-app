@@ -1,0 +1,25 @@
+{
+  "name": "docker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel index.js -d dist",
+    "start": "npm run build && node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/plugin-transform-async-to-generator": "7.2.0",
+    "@babel/core": "^7.2.0",
+    "babel-polyfill": "6.26.0",
+    "@babel/preset-env": "^7.2.0",
+    "graphql-yoga": "^1.16.7",
+    "then-redis": "2.0.1",
+    "redis": "2.8.0",
+    "redis-commands": "1.4.0"
+  }
+}
