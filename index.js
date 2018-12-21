@@ -8,23 +8,13 @@ const client = createClient({
 
 const typeDefs = `  
   type Query {
-    hello(name: String): String!
-    bye: String!
     visits: Int!
   }
 `;
 
 const resolvers = {
   Query: {
-    hello: (_, { name }) => `Hello ${name || 'World'}`,
-    bye: () => 'bye',
-    visits: async () => {
-      const visits = await client.get('visits');
-      await client.set('visits', +visits + 1);
-      process.exit(0);
-
-      return visits;
-    }
+    visits: async () => client.get('visits')
   }
 };
 
